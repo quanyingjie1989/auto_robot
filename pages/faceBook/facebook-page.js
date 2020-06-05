@@ -1,4 +1,6 @@
 import { Selector, t } from 'testcafe';
+import commonAction from '../utils/common-action.js';
+const commonaction = new commonAction();
 
 export default class faceBookPage {
 
@@ -13,15 +15,17 @@ export default class faceBookPage {
       .typeText(Selector('#pass'), faceBookPw)
       .click(Selector('#loginbutton'))
       .wait(5000)
+    console.log("페이스북 로그인 성공했습니다")
   }
 
   async faceBookPushMsg (msg) {
-    var Num = await this.intRandom();
     const comentInto = await Selector('span').withExactText("라이브 방송").parent(3)
     const comentInto2 = await Selector('h2').withExactText("게시물 만들기").parent(2)
-    await t.click(comentInto.find('div').withText("님, 무슨 생각을 하고 계신가요?")).wait(5000)
-      .click(comentInto2.find('div').withText("님, 무슨 생각을 하고 계신가요?"))
-      .pressKey(msg).wait(1000 * Num)
+    await t
+      .click(comentInto.find('div').withText("님, 무슨 생각을 하고 계신가요?")).wait(5000)
+      .doubleClick(comentInto2.find('div').withText("님, 무슨 생각을 하고 계신가요?"))
+      .pressKey(msg)
+    console.log("페이스북 내용 입력 했습니다")
   }
 
   async faceBookImgUpload (Img) {
@@ -37,54 +41,46 @@ export default class faceBookPage {
   }
 
   async faceBookPushButton () {
-    var Num = await this.intRandom();
-    await t.click(Selector('div').withExactText("게시")).wait(1000 * Num)
+    var Num = await commonaction.intRandom();
+    await t.click(Selector('div').withExactText("게시")).wait(1000 * Num);
   }
 
   async faceBookPushMsgCheck (msg1) {
-    var Num = await this.intRandom();
-    await t.expect(Selector('p').withExactText(msg1).exists).ok().wait(1000 * Num)
+    var Num = await commonaction.intRandom();
+    await t.expect(Selector('div').withExactText(msg1).exists).ok().wait(1000 * Num)
+    console.log("페이스북 내용 발송 했습니다")
   }
 
   async faceBookRun (msg1, msg2, msg3, msg4, msg5) {
     await t.navigateTo("https://www.facebook.com/login");
+    console.log("발송 내용 : " + msg1)
     await this.faceBookPushMsg(msg1)
     await this.faceBookPushButton()
-    // await t.wait(5000)
-    await t.wait(3000 + 1000 * await this.intRandom())
+    await t.wait(3000 + 1000 * await commonaction.intRandom())
 
     await t.navigateTo("https://www.facebook.com/login");
-    //await this.faceBookLogin(ID, Pw);
+    console.log("발송 내용 : " + msg2)
     await this.faceBookPushMsg(msg2)
     await this.faceBookPushButton()
-    //await t.wait(5000)
-    await t.wait(3000 + 1000 * await this.intRandom())
+    await t.wait(3000 + 1000 * await commonaction.intRandom())
 
     await t.navigateTo("https://www.facebook.com/login");
-    //await this.faceBookLogin(ID, Pw);
+    console.log("발송 내용 : " + msg3)
     await this.faceBookPushMsg(msg3)
     await this.faceBookPushButton()
-    //await t.wait(5000)
-    await t.wait(3000 + 1000 * await this.intRandom())
+    await t.wait(3000 + 1000 * await commonaction.intRandom())
 
     await t.navigateTo("https://www.facebook.com/login");
-    //await this.faceBookLogin(ID, Pw);
+    console.log("발송 내용 : " + msg4)
     await this.faceBookPushMsg(msg4)
     await this.faceBookPushButton()
-    //await t.wait(5000)
-    await t.wait(3000 + 1000 * await this.intRandom())
+    await t.wait(3000 + 1000 * await commonaction.intRandom())
 
     await t.navigateTo("https://www.facebook.com/login");
-    //await this.faceBookLogin(ID, Pw);
+    console.log("발송 내용 : " + msg5)
     await this.faceBookPushMsg(msg5)
     await this.faceBookPushButton()
-    //await t.wait(5000)
-    await t.wait(3000 + 1000 * await this.intRandom())
+    await t.wait(3000 + 1000 * await commonaction.intRandom())
     await this.faceBookRun(msg2, msg3, msg4, msg5, msg1)
-  }
-
-  async intRandom () {
-    var Num = Math.floor(Math.random() * 9 + 1);
-    return Num;
   }
 }
