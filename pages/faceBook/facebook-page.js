@@ -35,7 +35,6 @@ export default class faceBookPage {
     //   .click(Selector('div[aria-label="사진/동영상"]').find('img'))
     //   .setFilesToUpload(Selector('div[aria-label="사진/동영상"]').find('hu5pjgll bixrwtb6'), [Img]).wait(3000)
     //await t.click(Selector('div').withExactText("사진/동영상"))
-
     await t.setFilesToUpload(Selector('div').withExactText("사진/동영상").parent().nextSibling(), Img)
 
   }
@@ -51,36 +50,12 @@ export default class faceBookPage {
     console.log("페이스북 내용 발송 했습니다")
   }
 
-  async faceBookRun (msg1, msg2, msg3, msg4, msg5) {
-    await t.navigateTo("https://www.facebook.com/login");
-    console.log("발송 내용 : " + msg1)
-    await this.faceBookPushMsg(msg1)
-    await this.faceBookPushButton()
-    await t.wait(3000 + 1000 * await commonaction.intRandom())
-
-    await t.navigateTo("https://www.facebook.com/login");
-    console.log("발송 내용 : " + msg2)
-    await this.faceBookPushMsg(msg2)
-    await this.faceBookPushButton()
-    await t.wait(3000 + 1000 * await commonaction.intRandom())
-
-    await t.navigateTo("https://www.facebook.com/login");
-    console.log("발송 내용 : " + msg3)
-    await this.faceBookPushMsg(msg3)
-    await this.faceBookPushButton()
-    await t.wait(3000 + 1000 * await commonaction.intRandom())
-
-    await t.navigateTo("https://www.facebook.com/login");
-    console.log("발송 내용 : " + msg4)
-    await this.faceBookPushMsg(msg4)
-    await this.faceBookPushButton()
-    await t.wait(3000 + 1000 * await commonaction.intRandom())
-
-    await t.navigateTo("https://www.facebook.com/login");
-    console.log("발송 내용 : " + msg5)
-    await this.faceBookPushMsg(msg5)
-    await this.faceBookPushButton()
-    await t.wait(3000 + 1000 * await commonaction.intRandom())
-    await this.faceBookRun(msg2, msg3, msg4, msg5, msg1)
+  async faceBookCheckId (ID) {
+    const boolean = await Selector('div').withExactText("계정이 비활성화되었습니다").exists
+    if (boolean) {
+      console.log("ID : " + ID + "   -> 계정이 비활성화되여 사용할수 없습니다 ")
+      return true;
+    }
+    return false;
   }
 }
