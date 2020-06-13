@@ -28,6 +28,8 @@ fixture`twitter_marketing`
 test('twitter', async t => {
   console.log("발송 내용 1번 : " + twitter_Msg_1)
   await twitterpage.twitterLogin(twitter_Id_1, twitter_pW_1);
+  const twitterCheckId = await twitterpage.twitterCheckId(twitter_Id_1)
+  if (twitterCheckId) { return; }
   await twitterpage.twitterPushMsg(t.ctx.Msg1);
   await twitterpage.twitterPushButton();
 })

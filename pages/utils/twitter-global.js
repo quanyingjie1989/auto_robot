@@ -1,6 +1,6 @@
 // twitter 계정 
-global.twitter_Id_1 = "dluitest";
-global.twitter_pW_1 = "jpcms123!";
+global.twitter_Id_1 = "quantaihao123";
+global.twitter_pW_1 = "test123!";
 
 global.twitter_Id_2 = "dluitest";
 global.twitter_pW_2 = "jpcms123!";
