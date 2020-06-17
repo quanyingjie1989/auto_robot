@@ -25,7 +25,7 @@ fixture`facebook_marketing`
   })
 
 test('facebook1', async t => {
-  console.log("발송 내용 1번 : " + facebook_Msg_1)
+  console.log("Msg No.1 : " + facebook_Msg_1)
   await facebookpage.faceBookLogin(facebook_Id_1, facebook_pW_1);
   const faceBookCheckId = await facebookpage.faceBookCheckId(facebook_Id_1)
   if (faceBookCheckId) { return; }
@@ -36,7 +36,7 @@ test('facebook1', async t => {
 })
 
 test('facebook2', async t => {
-  console.log("발송 내용 2번 : " + facebook_Msg_2)
+  console.log("Msg No.2: " + facebook_Msg_2)
   await facebookpage.faceBookLogin(facebook_Id_2, facebook_pW_2);
   const faceBookCheckId = await facebookpage.faceBookCheckId(facebook_Id_2)
   if (faceBookCheckId) { return; }
@@ -48,7 +48,7 @@ test('facebook2', async t => {
 
 
 test('facebook3', async t => {
-  console.log("발송 내용 3번 : " + facebook_Msg_3)
+  console.log("Msg No.3 : " + facebook_Msg_3)
   await facebookpage.faceBookLogin(facebook_Id_3, facebook_pW_3);
   const faceBookCheckId = await facebookpage.faceBookCheckId(facebook_Id_3)
   if (faceBookCheckId) { return; }
@@ -59,7 +59,7 @@ test('facebook3', async t => {
 })
 
 test('facebook4', async t => {
-  console.log("발송 내용 4번 : " + facebook_Msg_4)
+  console.log("Msg No.4 : " + facebook_Msg_4)
   await facebookpage.faceBookLogin(facebook_Id_4, facebook_pW_4);
   const faceBookCheckId = await facebookpage.faceBookCheckId(facebook_Id_4)
   if (faceBookCheckId) { return; }
@@ -70,7 +70,7 @@ test('facebook4', async t => {
 })
 
 test('facebook5', async t => {
-  console.log("발송 내용 5번 : " + facebook_Msg_5)
+  console.log("Msg No.5 : " + facebook_Msg_5)
   await facebookpage.faceBookLogin(facebook_Id_5, facebook_pW_5);
   const faceBookCheckId = await facebookpage.faceBookCheckId(facebook_Id_5)
   if (faceBookCheckId) { return; }
@@ -82,7 +82,7 @@ test('facebook5', async t => {
 
 
 test('facebook6', async t => {
-  console.log("발송 내용 6번 : " + facebook_Msg_6)
+  console.log("Msg No.6 : " + facebook_Msg_6)
   await facebookpage.faceBookLogin(facebook_Id_6, facebook_pW_6);
   const faceBookCheckId = await facebookpage.faceBookCheckId(facebook_Id_6)
   if (faceBookCheckId) { return; }
@@ -93,7 +93,7 @@ test('facebook6', async t => {
 })
 
 test('facebook7', async t => {
-  console.log("발송 내용 7번 : " + facebook_Msg_7)
+  console.log("Msg No.7 : " + facebook_Msg_7)
   await facebookpage.faceBookLogin(facebook_Id_7, facebook_pW_7);
   const faceBookCheckId = await facebookpage.faceBookCheckId(facebook_Id_7)
   if (faceBookCheckId) { return; }
@@ -105,7 +105,7 @@ test('facebook7', async t => {
 
 
 test('facebook8', async t => {
-  console.log("발송 내용 8번 : " + facebook_Msg_8)
+  console.log("Msg No.8 : " + facebook_Msg_8)
   await facebookpage.faceBookLogin(facebook_Id_8, facebook_pW_8);
   const faceBookCheckId = await facebookpage.faceBookCheckId(facebook_Id_8)
   if (faceBookCheckId) { return; }
@@ -116,7 +116,7 @@ test('facebook8', async t => {
 })
 
 test('facebook9', async t => {
-  console.log("발송 내용 9번 : " + facebook_Msg_9)
+  console.log("Msg No.9 : " + facebook_Msg_9)
   await facebookpage.faceBookLogin(facebook_Id_9, facebook_pW_9);
   const faceBookCheckId = await facebookpage.faceBookCheckId(facebook_Id_9)
   if (faceBookCheckId) { return; }
@@ -127,7 +127,7 @@ test('facebook9', async t => {
 })
 
 test('facebook10', async t => {
-  console.log("발송 내용 10번 : " + facebook_Msg_10)
+  console.log("Msg No.10 : " + facebook_Msg_10)
   await facebookpage.faceBookLogin(facebook_Id_10, facebook_pW_10);
   const faceBookCheckId = await facebookpage.faceBookCheckId(facebook_Id_10)
   if (faceBookCheckId) { return; }
