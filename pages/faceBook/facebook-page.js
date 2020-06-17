@@ -15,7 +15,7 @@ export default class faceBookPage {
       .typeText(Selector('#pass'), faceBookPw)
       .click(Selector('#loginbutton'))
       .wait(5000)
-    console.log("페이스북 로그인 성공했습니다")
+    console.log("faceBook Login ok")
   }
 
   async faceBookPushMsg (msg) {
@@ -25,7 +25,7 @@ export default class faceBookPage {
       .click(comentInto.find('div').withText("님, 무슨 생각을 하고 계신가요?")).wait(5000)
       .doubleClick(comentInto2.find('div').withText("님, 무슨 생각을 하고 계신가요?"))
       .pressKey(msg)
-    console.log("페이스북 내용 입력 했습니다")
+    console.log("faceBook Msg Push ok")
   }
 
   async faceBookImgUpload (Img) {
@@ -47,13 +47,13 @@ export default class faceBookPage {
   async faceBookPushMsgCheck (msg1) {
     var Num = await commonaction.intRandom();
     await t.expect(Selector('div').withExactText(msg1).exists).ok().wait(1000 * Num)
-    console.log("페이스북 내용 발송 했습니다")
+    console.log("faceBook Msg Check ok")
   }
 
   async faceBookCheckId (ID) {
     const boolean = await Selector('div').withExactText("계정이 비활성화되었습니다").exists
     if (boolean) {
-      console.log("ID : " + ID + "   -> 계정이 비활성화되여 사용할수 없습니다 ")
+      console.log("ID : " + ID + "   ->  The account has been blocked ")
       return true;
     }
     return false;
